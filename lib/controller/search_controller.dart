@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
-import '../../dto/doamain_dto.dart';
+import '../model/doamain_dto.dart';
 import 'package:dio/dio.dart';
 
-import '../../network/config.dart';
+import '../network/config.dart';
 class SearchController extends GetxController{
 
   var _domain=DomainDTO().obs;

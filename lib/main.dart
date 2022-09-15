@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:rise_up_lab/page/login/login_page.dart';
-import 'package:rise_up_lab/page/search/search_page.dart';
+import './view/login/login_page.dart';
+import './view/search/search_page.dart';
 
 
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
       getPages: [
         GetPage(name: '/', page: () =>  SearchPage()),
-        // GetPage(name: '/second', page: () => Second()),
+         GetPage(name: '/login', page: () => LoginPage()),
         // GetPage(name: '/third', page: () => Third()),
         // GetPage(name: "/fourth", page: () => Fourth()),
       ],

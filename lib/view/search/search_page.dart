@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rise_up_lab/page/search/search_controller.dart';
+import '../../controller/search_controller.dart';
 class SearchPage extends StatelessWidget{
    SearchPage({super.key});
 
@@ -24,7 +24,16 @@ class SearchPage extends StatelessWidget{
 
 
                   return  Card(
-                    child:  Text(controller.domainNames[index].domain.toString()),
+                    child:  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(controller.domainNames[index].domain.toString(),style: TextStyle(fontSize: 20),),
+                        ElevatedButton(onPressed: (){
+                          Get.toNamed('/login',
+                          arguments: controller.domainNames[index].domain.toString());
+                        }, child: Text("Create Account"))
+                      ],
+                    ),
                   );
 
                 });

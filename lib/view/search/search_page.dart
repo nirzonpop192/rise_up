@@ -29,7 +29,7 @@ class SearchPage extends StatelessWidget{
                       children: [
                         Text(controller.domainNames[index].domain.toString(),style: TextStyle(fontSize: 20),),
                         ElevatedButton(onPressed: (){
-                          Get.toNamed('/login',
+                          Get.toNamed('/create',
                           arguments: controller.domainNames[index].domain.toString());
                         }, child: Text("Create Account"))
                       ],

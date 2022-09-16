@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../controller/home_controller.dart';
+import '../mail/show_mail_page.dart';
 class HomePage extends StatelessWidget {
    HomePage({Key? key}) : super(key: key);
 
@@ -25,8 +26,11 @@ class HomePage extends StatelessWidget {
 
                         return InkWell(
                                   onTap: (){
-                                 // Navigator.of(context).pushNamed('/mailView', arguments: testMessage[index]);
 
+                                    Get.to(() => ShowMailPage(), arguments: [
+                                      {"body": controller.mailList![index].intro},
+                                      {"from": controller.mailList![index].from?.address.toString()}
+                                    ]);
                                 },
                                   child:  Card(
                                     child:  Column(
@@ -34,7 +38,7 @@ class HomePage extends StatelessWidget {
                                       children: [
                                         Text("From ${controller.mailList![index].from?.address.toString()}",style: TextStyle(fontSize: 14),),
                                         Text("Subject ${controller.mailList![index].subject}",style: TextStyle(fontSize: 10),),
-                                        Text("Subject ${controller.mailList![index].intro}",style: TextStyle(fontSize: 10),),
+                                        Text(" ${controller.mailList![index].intro}",style: TextStyle(fontSize: 10),),
 
                                       ],
                                     ),

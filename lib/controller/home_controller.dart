@@ -2,8 +2,7 @@ import 'package:get/get.dart';
 
 import 'package:dio/dio.dart';
 import '../model/message_dto.dart';
-import '../network/config.dart';
-import 'login_controller.dart';
+import '../configuration/config.dart';
 class HomeController extends GetxController{
 
   var _response=MessageDTO().obs;

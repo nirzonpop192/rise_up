@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../model/create_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import '../network/config.dart';
+import '../configuration/config.dart';
 import '../view/login/login_page.dart';
 
 class CreateAccountController extends GetxController{

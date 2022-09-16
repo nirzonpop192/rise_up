@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../model/login_dto.dart';
 import '../network/config.dart';
+import '../network/config.dart';
 
 
 class LoginController extends GetxController{
@@ -37,6 +38,7 @@ class LoginController extends GetxController{
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         loginResponse.value=LoginDTO.fromJson(response.data);
+        Config.TOKEN=loginResponse.value.token!;
         print("object Success");
         Get.back();
         Get.off(() => HomePage());

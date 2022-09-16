@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rise_up_lab/controller/home_controller.dart';
 
 import '../../controller/login_controller.dart';
 class LoginPage extends StatelessWidget{
     LoginPage({super.key});
 
    final LoginController _controller = Get.put(LoginController());
+   //final HomeController homeController = Get.put(HomeController());
    final _formKey = GlobalKey<FormState>();
 
    @override
@@ -125,7 +127,7 @@ class LoginPage extends StatelessWidget{
                  ),
                ),
 
-        
+
              ],
            ),
          ),

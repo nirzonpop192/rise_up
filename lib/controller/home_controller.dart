@@ -19,10 +19,10 @@ class HomeController extends GetxController{
 
     Map<String,dynamic> headers = {};
     headers["accept"] = "application/ld+json";
-    headers["Authorization"] = "Bearer ${ApiConfig.ACCESS_TOKEN}".trim();
+    headers["Authorization"] = "Bearer ${_controller.loginResponse.value.token}".trim();
 
     try {
-      final response = await Dio().get(Config.BASE_URL+"domains/", options: Options(headers: headers));
+      final response = await Dio().get(Config.BASE_URL+"messages", options: Options(headers: headers));
 
       if (response.statusCode == 200) {
         print(response);

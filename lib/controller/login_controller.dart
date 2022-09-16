@@ -1,17 +1,16 @@
 import 'package:get/get.dart';
 import 'package:rise_up_lab/view/home/home_page.dart';
-import '../model/create_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../model/login_dto.dart';
 import '../network/config.dart';
-import '../view/login/login_page.dart';
+
 
 class LoginController extends GetxController{
 
   late TextEditingController emailTextController;
   late TextEditingController passwordTextController;
-
+  var loginResponse=LoginDTO().obs;
   var dom="".obs;
   @override
   void onInit() {
@@ -37,12 +36,11 @@ class LoginController extends GetxController{
       }, options: Options(headers: headers));
 
       if (response.statusCode == 200 || response.statusCode == 201) {
+        loginResponse.value=LoginDTO.fromJson(response.data);
         print("object Success");
         Get.back();
         Get.off(() => HomePage());
         print(response);
-        //createAccountResponse.value=LoginDTO.fromJson(response.data);
-
 
       } else {
         print('${response.statusCode} : ${response.data.toString()}');

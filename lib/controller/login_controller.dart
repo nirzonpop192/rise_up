@@ -1,15 +1,17 @@
 import 'package:get/get.dart';
+import 'package:rise_up_lab/view/home/home_page.dart';
 import '../model/create_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import '../model/login_dto.dart';
 import '../network/config.dart';
 import '../view/login/login_page.dart';
 
-class CreateAccountController extends GetxController{
+class LoginController extends GetxController{
 
   late TextEditingController emailTextController;
   late TextEditingController passwordTextController;
-  var createAccountResponse=CreateDTO().obs;
+
   var dom="".obs;
   @override
   void onInit() {
@@ -29,17 +31,17 @@ class CreateAccountController extends GetxController{
         barrierDismissible: false);
 
     try {
-      final response = await Dio().post(Config.BASE_URL+"accounts",data: {
-          "address": emailTextController.text+"@"+dom.value,
-          "password": passwordTextController.text
-          }, options: Options(headers: headers));
+      final response = await Dio().post(Config.BASE_URL+"token",data: {
+        "address": emailTextController.text+"@"+dom.value,
+        "password": passwordTextController.text
+      }, options: Options(headers: headers));
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         print("object Success");
         Get.back();
-        Get.off(() => LoginPage());
+        Get.off(() => HomePage());
         print(response);
-        createAccountResponse.value=CreateDTO.fromJson(response.data);
+        //createAccountResponse.value=LoginDTO.fromJson(response.data);
 
 
       } else {
@@ -47,7 +49,7 @@ class CreateAccountController extends GetxController{
 
       }
     } catch (e) {
-      e as DioError;
+     // e as DioError;
       print(e);
     }
   }

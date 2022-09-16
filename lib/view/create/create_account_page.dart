@@ -132,7 +132,8 @@ class CreateAccountPage extends StatelessWidget {
                     color: Colors.blue, borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () {
-                    Get.toNamed('/login',);
+                    Get.toNamed('/login',
+                    arguments: Get.arguments);
                   },
                   child: Text(
                     'Login',

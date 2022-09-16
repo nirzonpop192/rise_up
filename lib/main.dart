@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import './view/home/home_page.dart';
 import './view/create/create_account_page.dart';
 import './view/login/login_page.dart';
 import './view/search/search_page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () =>  SearchPage()),
          GetPage(name: '/login', page: () => LoginPage()),
          GetPage(name: '/create', page: () => CreateAccountPage()),
-        // GetPage(name: "/fourth", page: () => Fourth()),
+         GetPage(name: "/home", page: () => HomePage()),
       ],
     );
   }

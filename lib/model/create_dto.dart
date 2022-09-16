@@ -39,18 +39,18 @@ class CreateDTO {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['@context'] = this.context;
-    data['@id'] = this.at_id;
-    data['@type'] = this.type;
-    data['id'] = this.id;
-    data['address'] = this.address;
-    data['quota'] = this.quota;
-    data['used'] = this.used;
-    data['isDisabled'] = this.isDisabled;
-    data['isDeleted'] = this.isDeleted;
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
+    final Map<String, dynamic> data =  Map<String, dynamic>();
+    data['@context'] = context;
+    data['@id'] = at_id;
+    data['@type'] = type;
+    data['id'] = id;
+    data['address'] = address;
+    data['quota'] = quota;
+    data['used'] = used;
+    data['isDisabled'] = isDisabled;
+    data['isDeleted'] = isDeleted;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
     return data;
   }
 }
